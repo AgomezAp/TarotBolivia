@@ -53,8 +53,7 @@ export class DescriptionComponent {
     this.route.queryParams.subscribe((params) => {
       const status = params['status'];
       const token = params['token'];
-      console.log('Payment Status:', status);
-      console.log('Payment Token:', token);
+
       if (status === 'COMPLETED' && token) {
         try {
           const decodedToken = jwtDecode(token) as { status: string };
@@ -121,7 +120,7 @@ export class DescriptionComponent {
       if (this.isPaid === false && !this.paymentAttempted) {
         this.showSweetAlert();
       }
-    }, 3250);
+    }, 500);
   }
   showSweetAlert(): void {
     Swal.fire({

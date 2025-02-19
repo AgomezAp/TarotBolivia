@@ -1,7 +1,6 @@
 import { Router } from 'express';
 
 import {
-  cancelPayment,
   captureOrder,
   createOrder,
 } from '../controllers/payment.controller.js';
@@ -11,6 +10,5 @@ router.post("/create-order", createOrder);
 
 router.get("/capture-order", captureOrder);
 
-router.get("/cancel-order", cancelPayment);
 
-export default router; // Añade esta línea
+export default router; 
